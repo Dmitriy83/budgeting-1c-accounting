@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="81ea4bb0-f400-480a-a52d-888009c7ae43">
+  <name>бджБюджет</name>
+  <synonym>
+    <key>ru</key>
+    <value>Бюджет</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <includeInCommandInterface>true</includeInCommandInterface>
+  <picture xsi:type="core:PictureRef">
+    <picture>CommonPicture.БанкИКасса</picture>
+  </picture>
+  <content>Document.бджВводПланаДвиженийДенежныхСредств</content>
+  <content>Report.бджАнализДвиженийДенежныхСредств</content>
+</mdclass:Subsystem>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ba5a2455-0f2c-4515-b4e9-1d40092bddef">
+  <producedTypes>
+    <selectionType typeId="c9756723-22c7-4772-98d4-7c14913fcdc3" valueTypeId="00282763-ce6c-42be-8992-2544d2f8769a"/>
+    <listType typeId="7578a871-03da-4293-a7f0-21002e67e5ac" valueTypeId="7f338e0a-be2a-476d-bb4b-8ae19ae9ffd8"/>
+    <managerType typeId="b9eb5ff0-3739-4d29-8f70-d491636753e3" valueTypeId="fa80212d-ec39-45a3-9e7e-9a9b0c236bce"/>
+    <recordSetType typeId="395ed910-d209-47e7-b50b-159b56dafeda" valueTypeId="19d65ea9-1ade-4ae0-859f-b6b22805905e"/>
+    <recordKeyType typeId="746e1f9b-90d0-4913-92b8-aefe7cd61762" valueTypeId="64acfea6-a0fb-4c30-be08-dbc13352849c"/>
+    <recordType typeId="3b6d3457-1387-477b-88c1-c079ffdc7e17" valueTypeId="27ec9389-4a51-4e30-a38b-f010f356a138"/>
+  </producedTypes>
+  <name>бджПланДвиженийДенежныхСредств</name>
+  <synonym>
+    <key>ru</key>
+    <value>План движений денежных средств</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <listPresentation>
+    <key>ru</key>
+    <value>Планы движений денежных средств</value>
+  </listPresentation>
+  <extendedListPresentation>
+    <key>ru</key>
+    <value>Планы движений денежных средств</value>
+  </extendedListPresentation>
+  <resources uuid="aca241cd-f1b5-47da-881e-28ab743ec344">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="e11cd237-fa27-43a1-88e8-a34eed8633d6">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="9b1ed319-f02e-4783-94f1-03b46dc7860a">
+    <name>СтатьяДвиженияДенежныхСредств</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья движения денежных средств</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиДвиженияДенежныхСредств</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>

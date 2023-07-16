@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:FunctionalOption xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="9385dc6b-33d5-44c8-a5c4-2170a5bad04a" extendedConfigurationObject="17a3fa03-d604-4423-9de0-f9a02572f215">
+  <name>ИспользоватьНесколькоОрганизацийБухгалтерскийУчет</name>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:FunctionalOptionExtension">
+    <extendedConfigurationObject>Checked</extendedConfigurationObject>
+    <location>Checked</location>
+  </extension>
+  <location>Constant.ИспользоватьНесколькоОрганизаций</location>
+</mdclass:FunctionalOption>

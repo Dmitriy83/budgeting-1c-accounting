@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="448ebda8-b7e7-4dd9-a8b2-a55831d45867">
+  <name>Бюджет</name>
+  <synonym>
+    <key>en</key>
+    <value>Бюджет</value>
+  </synonym>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:ConfigurationExtension">
+    <defaultRunMode>Checked</defaultRunMode>
+    <usePurposes>Checked</usePurposes>
+    <commandInterface>Extended</commandInterface>
+    <mainSectionCommandInterface>Extended</mainSectionCommandInterface>
+    <defaultLanguage>Checked</defaultLanguage>
+    <interfaceCompatibilityMode>Checked</interfaceCompatibilityMode>
+    <compatibilityMode>Checked</compatibilityMode>
+    <defaultStyle>Extended</defaultStyle>
+  </extension>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="1cfb7c57-5d2b-4940-93f1-9f7ceb72bb04"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="0b10b2df-373c-46fe-a844-462c9b5c914c"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="9feb4730-22fc-4aa7-aa0d-b2b60c8dde6e"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="b338a87e-e4bd-4117-9abc-b899eceb279c"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="7fa24689-f40c-4453-8876-7cfe7b11403f"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="a691e880-2600-4e12-a522-dea80a1fc41b"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="8bed5166-7616-427e-8119-f5b5bce4d9a2"/>
+  <keepMappingToExtendedConfigurationObjectsByIDs>true</keepMappingToExtendedConfigurationObjectsByIDs>
+  <namePrefix>бдж</namePrefix>
+  <configurationExtensionCompatibilityMode>8.3.17</configurationExtensionCompatibilityMode>
+  <configurationExtensionPurpose>Customization</configurationExtensionPurpose>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <scriptVariant>Russian</scriptVariant>
+  <defaultLanguage>Language.Русский</defaultLanguage>
+  <interfaceCompatibilityMode>TaxiEnableVersion8_2</interfaceCompatibilityMode>
+  <compatibilityMode>8.3.17</compatibilityMode>
+  <languages uuid="8ad2dd5d-aa5b-4908-886e-5a8083a0f53c">
+    <name>Русский</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:LanguageExtension">
+      <languageCode>Checked</languageCode>
+    </extension>
+    <languageCode>ru</languageCode>
+  </languages>
+  <subsystems>Subsystem.бджБюджет</subsystems>
+  <styleItems>StyleItem.ЗаголовкиСтрокЦветТекста</styleItems>
+  <styleItems>StyleItem.ЗаголовкиСтрокШрифт</styleItems>
+  <styleItems>StyleItem.СодержаниеУслугиШрифт</styleItems>
+  <styleItems>StyleItem.ЦветФонаНекорректногоКонтрагента</styleItems>
+  <commonPictures>CommonPicture.АктивностьПоРН</commonPictures>
+  <commonPictures>CommonPicture.БанкИКасса</commonPictures>
+  <commonPictures>CommonPicture.ДлительнаяОперация48</commonPictures>
+  <commonPictures>CommonPicture.ЖурналПроводок</commonPictures>
+  <commonPictures>CommonPicture.ЗаполнитьФорму</commonPictures>
+  <commonPictures>CommonPicture.НезавершившаясяПроверка</commonPictures>
+  <commonPictures>CommonPicture.Отчеты</commonPictures>
+  <commonPictures>CommonPicture.ПанельНастроек</commonPictures>
+  <commonPictures>CommonPicture.ПредыдущийБаннер</commonPictures>
+  <commonPictures>CommonPicture.РассылкаОтчетовНеактивная</commonPictures>
+  <commonPictures>CommonPicture.СледующийБаннер</commonPictures>
+  <commonPictures>CommonPicture.Сумма</commonPictures>
+  <commonPictures>CommonPicture.Сформировать</commonPictures>
+  <commonPictures>CommonPicture.ЭлектронноеПисьмо</commonPictures>
+  <roles>Role.бджДобавлениеИзменениеПланаДвиженийДенежныхСредств</roles>
+  <commonModules>CommonModule.УправлениеПечатьюПереопределяемый</commonModules>
+  <settingsStorages>SettingsStorage.ХранилищеВариантовОтчетов</settingsStorages>
+  <functionalOptions>FunctionalOption.ИспользоватьНесколькоОрганизацийБухгалтерскийУчет</functionalOptions>
+  <constants>Constant.ИспользоватьНесколькоОрганизаций</constants>
+  <commonForms>CommonForm.ВспомогательнаяФормаНастроекОтчета</commonForms>
+  <catalogs>Catalog.Организации</catalogs>
+  <catalogs>Catalog.Пользователи</catalogs>
+  <catalogs>Catalog.СтатьиДвиженияДенежныхСредств</catalogs>
+  <documents>Document.бджВводПланаДвиженийДенежныхСредств</documents>
+  <reports>Report.бджАнализДвиженийДенежныхСредств</reports>
+  <accumulationRegisters>AccumulationRegister.бджПланДвиженийДенежныхСредств</accumulationRegisters>
+</mdclass:Configuration>
