@@ -2211,7 +2211,7 @@
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>СтатьяДвиженияДенежныхСредств</dataPath>
-				<field>СтатьяБюджетаДоходовИРасходов</field>
+				<field>СтатьяДвиженияДенежныхСредств</field>
 				<role>
 					<dcscom:dimension>true</dcscom:dimension>
 				</role>
