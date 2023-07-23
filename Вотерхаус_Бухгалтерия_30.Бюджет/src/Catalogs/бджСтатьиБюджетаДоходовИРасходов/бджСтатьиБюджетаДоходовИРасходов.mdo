@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="47bdc42f-c4e5-4335-898d-35649be1a60a">
+  <producedTypes>
+    <objectType typeId="071999f9-7d6c-4dd5-aadd-f8aad9f113c3" valueTypeId="817ac6fe-16a7-4592-bb8a-7e8385d55d0f"/>
+    <refType typeId="e9f11153-35dd-4c34-82f5-41074760f518" valueTypeId="427b68c7-855f-4a78-a00f-b67f3c96a9ab"/>
+    <selectionType typeId="01ef55fe-d080-4331-b8c2-29af2aae5a39" valueTypeId="a92ec7cb-48c1-4c25-a923-4517b9269d54"/>
+    <listType typeId="d7a488dd-f153-4338-be3e-e5f088522d79" valueTypeId="50609666-ab0e-483a-aa33-fa9430e07895"/>
+    <managerType typeId="d329d717-1460-4927-b3f0-6bcd5e266457" valueTypeId="a34f5b77-9eb5-4bf9-b79e-8f4cca841f73"/>
+  </producedTypes>
+  <name>бджСтатьиБюджетаДоходовИРасходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Статьи бюджета доходов и расходов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <inputByString>Catalog.бджСтатьиБюджетаДоходовИРасходов.StandardAttribute.Code</inputByString>
+  <inputByString>Catalog.бджСтатьиБюджетаДоходовИРасходов.StandardAttribute.Description</inputByString>
+  <fullTextSearchOnInputByString>DontUse</fullTextSearchOnInputByString>
+  <createOnInput>Use</createOnInput>
+  <fullTextSearch>Use</fullTextSearch>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Статья бюджета доходов и расходов</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Статьи бюджета доходов и расходов</value>
+  </listPresentation>
+  <hierarchical>true</hierarchical>
+  <limitLevelCount>true</limitLevelCount>
+  <levelCount>1</levelCount>
+  <foldersOnTop>true</foldersOnTop>
+  <codeLength>3</codeLength>
+  <descriptionLength>100</descriptionLength>
+  <codeType>String</codeType>
+  <codeAllowedLength>Variable</codeAllowedLength>
+  <checkUnique>true</checkUnique>
+  <autonumbering>true</autonumbering>
+  <defaultPresentation>AsDescription</defaultPresentation>
+  <editType>InDialog</editType>
+  <choiceMode>BothWays</choiceMode>
+  <attributes uuid="ebc41beb-4cef-4113-bc23-239bc4e0d425">
+    <name>ТекстЗапроса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Текст запроса</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers/>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="7ddad9f3-5a4d-4153-ba09-248759507f0f">
+    <name>ТипАналитики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Тип аналитики</value>
+    </synonym>
+    <type>
+      <types>EnumRef.бджТипыАналитикиСтатейБюджетаДоходовИРасходов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <fillValue xsi:type="core:ReferenceValue">
+      <value>Enum.бджТипыАналитикиСтатейБюджетаДоходовИРасходов.EnumValue.БезАналитики</value>
+    </fillValue>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <tabularSections uuid="cb587caa-74e9-457a-b9ce-bd53a5d559f4">
+    <producedTypes>
+      <objectType typeId="e1044441-0135-4822-95e7-873831689d16" valueTypeId="e3d7f365-15f3-4acb-9bbe-10b30ec5c0da"/>
+      <rowType typeId="4bb46d29-75c0-41c6-a233-f813203cfba9" valueTypeId="9d8ea3e7-7825-48c8-baad-daadec5f3c55"/>
+    </producedTypes>
+    <name>ПараметрыЗапроса</name>
+    <synonym>
+      <key>ru</key>
+      <value>Параметры запроса</value>
+    </synonym>
+    <attributes uuid="c2c38230-44dd-41d2-af1b-fadf3866c33d">
+      <name>Имя</name>
+      <synonym>
+        <key>ru</key>
+        <value>Имя</value>
+      </synonym>
+      <type>
+        <types>String</types>
+        <stringQualifiers>
+          <length>50</length>
+        </stringQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+    <attributes uuid="d73c48c9-3499-4ade-abdf-cb569d9b0d26">
+      <name>Значение</name>
+      <synonym>
+        <key>ru</key>
+        <value>Значение</value>
+      </synonym>
+      <type>
+        <types>Date</types>
+        <types>Number</types>
+        <types>String</types>
+        <types>Boolean</types>
+        <types>CatalogRef.НоменклатурныеГруппы</types>
+        <types>CatalogRef.Организации</types>
+        <types>CatalogRef.СтатьиДвиженияДенежныхСредств</types>
+        <types>CatalogRef.СтатьиЗатрат</types>
+        <types>CatalogRef.бджСтатьиБюджетаДоходовИРасходов</types>
+        <types>EnumRef.бджТипыАналитикиСтатейБюджетаДоходовИРасходов</types>
+        <numberQualifiers>
+          <precision>10</precision>
+        </numberQualifiers>
+        <stringQualifiers>
+          <length>10</length>
+        </stringQualifiers>
+        <dateQualifiers>
+          <dateFractions>Date</dateFractions>
+        </dateQualifiers>
+      </type>
+      <minValue xsi:type="core:UndefinedValue"/>
+      <maxValue xsi:type="core:UndefinedValue"/>
+      <dataHistory>Use</dataHistory>
+      <fullTextSearch>Use</fullTextSearch>
+    </attributes>
+  </tabularSections>
+</mdclass:Catalog>

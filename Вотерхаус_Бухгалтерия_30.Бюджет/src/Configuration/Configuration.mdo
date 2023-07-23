@@ -66,10 +66,16 @@
   <functionalOptions>FunctionalOption.ИспользоватьНесколькоОрганизацийБухгалтерскийУчет</functionalOptions>
   <constants>Constant.ИспользоватьНесколькоОрганизаций</constants>
   <commonForms>CommonForm.ВспомогательнаяФормаНастроекОтчета</commonForms>
+  <catalogs>Catalog.бджСтатьиБюджетаДоходовИРасходов</catalogs>
+  <catalogs>Catalog.НоменклатурныеГруппы</catalogs>
   <catalogs>Catalog.Организации</catalogs>
   <catalogs>Catalog.Пользователи</catalogs>
   <catalogs>Catalog.СтатьиДвиженияДенежныхСредств</catalogs>
+  <catalogs>Catalog.СтатьиЗатрат</catalogs>
+  <documents>Document.бджВводПланаБюджетаДоходовИРасходов</documents>
   <documents>Document.бджВводПланаДвиженийДенежныхСредств</documents>
+  <enums>Enum.бджТипыАналитикиСтатейБюджетаДоходовИРасходов</enums>
   <reports>Report.бджАнализДвиженийДенежныхСредств</reports>
+  <accumulationRegisters>AccumulationRegister.бджПланБюджетаДоходовИРасходов</accumulationRegisters>
   <accumulationRegisters>AccumulationRegister.бджПланДвиженийДенежныхСредств</accumulationRegisters>
 </mdclass:Configuration>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fc5e5727-88fb-4f4a-ad52-7dc5a172bdea">
+  <producedTypes>
+    <refType typeId="1a39dcd6-c95d-425e-b693-ca148addcebb" valueTypeId="e612a973-00ad-4638-907e-f7ce26c827a1"/>
+    <listType typeId="61958974-cf40-4eeb-b49f-d597c5a74241" valueTypeId="6492853c-5dd4-4fd7-bd35-9832f30871a8"/>
+    <managerType typeId="8e20a278-81bc-47ab-80cf-14e5b3a4d593" valueTypeId="4cbf0efc-2bf3-4573-b44b-5f0f5b5cf42c"/>
+  </producedTypes>
+  <name>бджТипыАналитикиСтатейБюджетаДоходовИРасходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Типы аналитики статей бюджета доходов и расходов</value>
+  </synonym>
+  <quickChoice>true</quickChoice>
+  <choiceMode>BothWays</choiceMode>
+  <enumValues uuid="40f37242-f522-4d71-9c6d-c2d4a0d6d8bf">
+    <name>НоменклатурнаяГруппа</name>
+    <synonym>
+      <key>ru</key>
+      <value>Номенклатурная группа</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="999dea26-0dc5-44a4-9a0c-b911d02ee099">
+    <name>СтатьяЗатрат</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья затрат</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="bd85a07b-1f33-4d3e-8766-37c886bebbb1">
+    <name>БезАналитики</name>
+    <synonym>
+      <key>ru</key>
+      <value>Без аналитики</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

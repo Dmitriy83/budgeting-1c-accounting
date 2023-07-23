@@ -4,12 +4,14 @@
     <placementFragments>
       <group>NavigationPanelImportant</group>
       <commands>Document.бджВводПланаДвиженийДенежныхСредств.StandardCommand.OpenList</commands>
+      <commands>Document.бджВводПланаБюджетаДоходовИРасходов.StandardCommand.OpenList</commands>
     </placementFragments>
   </commandsPlacement>
   <commandsOrder>
     <orderFragments>
       <group>NavigationPanelImportant</group>
       <commands>Document.бджВводПланаДвиженийДенежныхСредств.StandardCommand.OpenList</commands>
+      <commands>Document.бджВводПланаБюджетаДоходовИРасходов.StandardCommand.OpenList</commands>
     </orderFragments>
   </commandsOrder>
 </cmi:CommandInterface>

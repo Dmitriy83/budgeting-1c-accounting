@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:AccumulationRegister xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="8cd9bb74-76c6-4036-8bf2-812c39312498">
+  <producedTypes>
+    <selectionType typeId="12ff1f25-5cc7-4fc7-99df-b9b99272eeda" valueTypeId="060b64b6-56f7-42c9-98b6-e9ded9e84c92"/>
+    <listType typeId="50ff5752-5ab9-431c-a4e1-cc45dabd400d" valueTypeId="28d7f5d2-6127-47b5-abfc-b6f47db2c443"/>
+    <managerType typeId="c5b42069-c1fc-40ec-a69a-e2602cb42385" valueTypeId="1d3c8d9f-13ec-47cc-933d-ccd4a70e47a5"/>
+    <recordSetType typeId="c2be6bb1-93a0-45e9-bcba-02cdebbf629e" valueTypeId="69dcde18-7407-439b-9644-889282625eca"/>
+    <recordKeyType typeId="aa7fd8f7-1611-41c5-acb3-c07fd27dc84e" valueTypeId="538cdfcd-1f46-48b3-83b6-464f6e67963a"/>
+    <recordType typeId="a313c6e8-ef4f-46b1-a0ab-ce24160403a4" valueTypeId="151ff75c-5703-4033-8259-3e84e21cd1e6"/>
+  </producedTypes>
+  <name>бджПланБюджетаДоходовИРасходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>План бюджета доходов и расходов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <registerType>Turnovers</registerType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <enableTotalsSplitting>true</enableTotalsSplitting>
+  <listPresentation>
+    <key>ru</key>
+    <value>Планы бюджета доходов и расходов</value>
+  </listPresentation>
+  <extendedListPresentation>
+    <key>ru</key>
+    <value>Планы бюджета доходов и расходов</value>
+  </extendedListPresentation>
+  <resources uuid="9bf2758f-fa07-47db-8fa8-b4813cc73fdc">
+    <name>Сумма</name>
+    <synonym>
+      <key>ru</key>
+      <value>Сумма</value>
+    </synonym>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>15</precision>
+        <scale>2</scale>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+  </resources>
+  <dimensions uuid="f1d51b45-f4b3-46d9-aef5-325a8530de6a">
+    <name>Организация</name>
+    <synonym>
+      <key>ru</key>
+      <value>Организация</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.Организации</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="f4d83b47-ecb5-4454-8849-931df2848c19">
+    <name>СтатьяБюджетаДоходовИРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Статья бюджета доходов и расходов</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.бджСтатьиБюджетаДоходовИРасходов</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillChecking>ShowError</fillChecking>
+    <denyIncompleteValues>true</denyIncompleteValues>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+  <dimensions uuid="0ffea6bc-37b1-40ef-ab30-40969414b0ba">
+    <name>Аналитика</name>
+    <synonym>
+      <key>ru</key>
+      <value>Аналитика</value>
+    </synonym>
+    <type>
+      <types>CatalogRef.СтатьиЗатрат</types>
+      <types>CatalogRef.НоменклатурныеГруппы</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <useInTotals>true</useInTotals>
+  </dimensions>
+</mdclass:AccumulationRegister>
