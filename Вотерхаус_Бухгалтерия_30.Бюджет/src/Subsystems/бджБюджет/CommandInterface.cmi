@@ -6,12 +6,20 @@
       <commands>Document.бджВводПланаДвиженийДенежныхСредств.StandardCommand.OpenList</commands>
       <commands>Document.бджВводПланаБюджетаДоходовИРасходов.StandardCommand.OpenList</commands>
     </placementFragments>
+    <placementFragments>
+      <group>ActionsPanelReports</group>
+      <commands>Report.бджАнализДвиженийДенежныхСредств.Command.АнализДвиженийДенежныхСредств</commands>
+    </placementFragments>
   </commandsPlacement>
   <commandsOrder>
     <orderFragments>
       <group>NavigationPanelImportant</group>
       <commands>Document.бджВводПланаДвиженийДенежныхСредств.StandardCommand.OpenList</commands>
       <commands>Document.бджВводПланаБюджетаДоходовИРасходов.StandardCommand.OpenList</commands>
+    </orderFragments>
+    <orderFragments>
+      <group>ActionsPanelReports</group>
+      <commands>Report.бджАнализДвиженийДенежныхСредств.Command.АнализДвиженийДенежныхСредств</commands>
     </orderFragments>
   </commandsOrder>
 </cmi:CommandInterface>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Report xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="46d4e2d8-6914-43d0-923f-1b8d81741c58">
+  <producedTypes>
+    <objectType typeId="7fa9b739-be4c-456a-9d80-58ad044ae8c7" valueTypeId="e45cba45-6f33-4a2d-8e3d-cfc5e0c85b3d"/>
+    <managerType typeId="2c2ed5bb-01b7-42f6-9f3a-440f690bf69d" valueTypeId="cc593a43-cb73-4127-8373-28697177264b"/>
+  </producedTypes>
+  <name>бджАнализБюджетаДоходовИРасходов</name>
+  <synonym>
+    <key>ru</key>
+    <value>Анализ бюджета доходов и расходов</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <mainDataCompositionSchema>Report.бджАнализБюджетаДоходовИРасходов.Template.MainDataCompositionSchema</mainDataCompositionSchema>
+  <templates uuid="f951250e-8880-4436-ad2b-485c6fbf938c">
+    <name>MainDataCompositionSchema</name>
+    <synonym>
+      <key>ru</key>
+      <value>Main data composition schema</value>
+    </synonym>
+    <templateType>DataCompositionSchema</templateType>
+  </templates>
+  <commands uuid="709bb424-98d7-4e88-9052-05708b2fca3c">
+    <name>АнализБюджетаДоходовИРасходов</name>
+    <synonym>
+      <key>ru</key>
+      <value>Анализ бюджета доходов и расходов</value>
+    </synonym>
+    <group>ActionsPanelReports</group>
+    <representation>Auto</representation>
+  </commands>
+</mdclass:Report>

@@ -42,6 +42,7 @@
     <languageCode>ru</languageCode>
   </languages>
   <subsystems>Subsystem.бджБюджет</subsystems>
+  <subsystems>Subsystem.СтандартныеПодсистемы</subsystems>
   <styleItems>StyleItem.ЗаголовкиСтрокЦветТекста</styleItems>
   <styleItems>StyleItem.ЗаголовкиСтрокШрифт</styleItems>
   <styleItems>StyleItem.СодержаниеУслугиШрифт</styleItems>
@@ -61,6 +62,7 @@
   <commonPictures>CommonPicture.Сформировать</commonPictures>
   <commonPictures>CommonPicture.ЭлектронноеПисьмо</commonPictures>
   <roles>Role.бджДобавлениеИзменениеПланаДвиженийДенежныхСредств</roles>
+  <roles>Role.ПолныеПрава</roles>
   <commonModules>CommonModule.УправлениеПечатьюПереопределяемый</commonModules>
   <settingsStorages>SettingsStorage.ХранилищеВариантовОтчетов</settingsStorages>
   <functionalOptions>FunctionalOption.ИспользоватьНесколькоОрганизацийБухгалтерскийУчет</functionalOptions>
@@ -75,6 +77,7 @@
   <documents>Document.бджВводПланаБюджетаДоходовИРасходов</documents>
   <documents>Document.бджВводПланаДвиженийДенежныхСредств</documents>
   <enums>Enum.бджТипыАналитикиСтатейБюджетаДоходовИРасходов</enums>
+  <reports>Report.бджАнализБюджетаДоходовИРасходов</reports>
   <reports>Report.бджАнализДвиженийДенежныхСредств</reports>
   <accumulationRegisters>AccumulationRegister.бджПланБюджетаДоходовИРасходов</accumulationRegisters>
   <accumulationRegisters>AccumulationRegister.бджПланДвиженийДенежныхСредств</accumulationRegisters>

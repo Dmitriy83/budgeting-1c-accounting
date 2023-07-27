@@ -13,4 +13,6 @@
   <content>Document.бджВводПланаДвиженийДенежныхСредств</content>
   <content>Report.бджАнализДвиженийДенежныхСредств</content>
   <content>Document.бджВводПланаБюджетаДоходовИРасходов</content>
+  <content>Catalog.бджСтатьиБюджетаДоходовИРасходов</content>
+  <content>Report.бджАнализБюджетаДоходовИРасходов</content>
 </mdclass:Subsystem>

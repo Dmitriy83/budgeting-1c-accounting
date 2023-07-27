@@ -403,6 +403,10 @@
       <dataPath xsi:type="form:DataPath">
         <segments>Объект.План.СтатьяБюджетаДоходовИРасходов</segments>
       </dataPath>
+      <handlers>
+        <event>OnChange</event>
+        <name>ПланСтатьяБюджетаДоходовИРасходовПриИзменении</name>
+      </handlers>
       <extendedTooltip>
         <name>ПланСтатьяБюджетаДоходовИРасходовРасширеннаяПодсказка</name>
         <id>100</id>
@@ -553,6 +557,10 @@
       <horizontalAlign>Left</horizontalAlign>
       <autoFill>true</autoFill>
     </autoCommandBar>
+    <handlers>
+      <event>OnActivateCell</event>
+      <name>ПланПриАктивизацииЯчейки</name>
+    </handlers>
     <searchStringAddition>
       <visible>true</visible>
       <enabled>true</enabled>

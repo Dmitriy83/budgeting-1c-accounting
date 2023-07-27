@@ -39,6 +39,7 @@
   <defaultPresentation>AsDescription</defaultPresentation>
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
+  <defaultObjectForm>Catalog.бджСтатьиБюджетаДоходовИРасходов.Form.ItemForm</defaultObjectForm>
   <attributes uuid="ebc41beb-4cef-4113-bc23-239bc4e0d425">
     <name>ТекстЗапроса</name>
     <synonym>
@@ -49,6 +50,7 @@
       <types>String</types>
       <stringQualifiers/>
     </type>
+    <multiLine>true</multiLine>
     <minValue xsi:type="core:UndefinedValue"/>
     <maxValue xsi:type="core:UndefinedValue"/>
     <fillValue xsi:type="core:UndefinedValue"/>
@@ -73,64 +75,32 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
-  <tabularSections uuid="cb587caa-74e9-457a-b9ce-bd53a5d559f4">
-    <producedTypes>
-      <objectType typeId="e1044441-0135-4822-95e7-873831689d16" valueTypeId="e3d7f365-15f3-4acb-9bbe-10b30ec5c0da"/>
-      <rowType typeId="4bb46d29-75c0-41c6-a233-f813203cfba9" valueTypeId="9d8ea3e7-7825-48c8-baad-daadec5f3c55"/>
-    </producedTypes>
-    <name>ПараметрыЗапроса</name>
+  <attributes uuid="1336c9ff-ee25-4c7c-8a3d-dfa4771813ae">
+    <name>Порядок</name>
     <synonym>
       <key>ru</key>
-      <value>Параметры запроса</value>
+      <value>Порядок</value>
     </synonym>
-    <attributes uuid="c2c38230-44dd-41d2-af1b-fadf3866c33d">
-      <name>Имя</name>
-      <synonym>
-        <key>ru</key>
-        <value>Имя</value>
-      </synonym>
-      <type>
-        <types>String</types>
-        <stringQualifiers>
-          <length>50</length>
-        </stringQualifiers>
-      </type>
-      <minValue xsi:type="core:UndefinedValue"/>
-      <maxValue xsi:type="core:UndefinedValue"/>
-      <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
-    </attributes>
-    <attributes uuid="d73c48c9-3499-4ade-abdf-cb569d9b0d26">
-      <name>Значение</name>
-      <synonym>
-        <key>ru</key>
-        <value>Значение</value>
-      </synonym>
-      <type>
-        <types>Date</types>
-        <types>Number</types>
-        <types>String</types>
-        <types>Boolean</types>
-        <types>CatalogRef.НоменклатурныеГруппы</types>
-        <types>CatalogRef.Организации</types>
-        <types>CatalogRef.СтатьиДвиженияДенежныхСредств</types>
-        <types>CatalogRef.СтатьиЗатрат</types>
-        <types>CatalogRef.бджСтатьиБюджетаДоходовИРасходов</types>
-        <types>EnumRef.бджТипыАналитикиСтатейБюджетаДоходовИРасходов</types>
-        <numberQualifiers>
-          <precision>10</precision>
-        </numberQualifiers>
-        <stringQualifiers>
-          <length>10</length>
-        </stringQualifiers>
-        <dateQualifiers>
-          <dateFractions>Date</dateFractions>
-        </dateQualifiers>
-      </type>
-      <minValue xsi:type="core:UndefinedValue"/>
-      <maxValue xsi:type="core:UndefinedValue"/>
-      <dataHistory>Use</dataHistory>
-      <fullTextSearch>Use</fullTextSearch>
-    </attributes>
-  </tabularSections>
+    <type>
+      <types>Number</types>
+      <numberQualifiers>
+        <precision>3</precision>
+        <nonNegative>true</nonNegative>
+      </numberQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <forms uuid="9ef4fa02-df93-437e-87b3-906061d321f8">
+    <name>ItemForm</name>
+    <synonym>
+      <key>ru</key>
+      <value>Item form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
 </mdclass:Catalog>
