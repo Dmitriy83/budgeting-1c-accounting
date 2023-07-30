@@ -232,10 +232,10 @@
       <fullTextSearch>Use</fullTextSearch>
     </attributes>
     <attributes uuid="6cbd250c-41e4-4977-8cd8-317233ed513f">
-      <name>Сумма</name>
+      <name>Значение</name>
       <synonym>
         <key>ru</key>
-        <value>Сумма</value>
+        <value>Значение</value>
       </synonym>
       <type>
         <types>Number</types>

@@ -40,11 +40,12 @@
   <editType>InDialog</editType>
   <choiceMode>BothWays</choiceMode>
   <defaultObjectForm>Catalog.бджСтатьиБюджетаДоходовИРасходов.Form.ItemForm</defaultObjectForm>
+  <defaultListForm>Catalog.бджСтатьиБюджетаДоходовИРасходов.Form.ListForm</defaultListForm>
   <attributes uuid="ebc41beb-4cef-4113-bc23-239bc4e0d425">
-    <name>ТекстЗапроса</name>
+    <name>ТекстЗапросаПолученияФакта</name>
     <synonym>
       <key>ru</key>
-      <value>Текст запроса</value>
+      <value>Текст запроса получения факта</value>
     </synonym>
     <type>
       <types>String</types>
@@ -94,11 +95,53 @@
     <fullTextSearch>Use</fullTextSearch>
     <dataHistory>Use</dataHistory>
   </attributes>
+  <attributes uuid="df329d65-59d7-45ec-9092-2cf3eaecff7b">
+    <name>Использовать</name>
+    <synonym>
+      <key>ru</key>
+      <value>Использовать</value>
+    </synonym>
+    <type>
+      <types>Boolean</types>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
+  <attributes uuid="eb0b2336-ceb5-4b06-9501-97be8f50f824">
+    <name>Идентификатор</name>
+    <synonym>
+      <key>ru</key>
+      <value>Идентификатор</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <dataHistory>Use</dataHistory>
+  </attributes>
   <forms uuid="9ef4fa02-df93-437e-87b3-906061d321f8">
     <name>ItemForm</name>
     <synonym>
       <key>ru</key>
       <value>Item form</value>
+    </synonym>
+    <usePurposes>PersonalComputer</usePurposes>
+    <usePurposes>MobileDevice</usePurposes>
+  </forms>
+  <forms uuid="d56d57cf-f65d-4d6a-a4ae-a57c2833f544">
+    <name>ListForm</name>
+    <synonym>
+      <key>ru</key>
+      <value>List form</value>
     </synonym>
     <usePurposes>PersonalComputer</usePurposes>
     <usePurposes>MobileDevice</usePurposes>

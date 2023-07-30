@@ -26,10 +26,10 @@
     <value>Планы бюджета доходов и расходов</value>
   </extendedListPresentation>
   <resources uuid="9bf2758f-fa07-47db-8fa8-b4813cc73fdc">
-    <name>Сумма</name>
+    <name>Значение</name>
     <synonym>
       <key>ru</key>
-      <value>Сумма</value>
+      <value>Значение</value>
     </synonym>
     <type>
       <types>Number</types>

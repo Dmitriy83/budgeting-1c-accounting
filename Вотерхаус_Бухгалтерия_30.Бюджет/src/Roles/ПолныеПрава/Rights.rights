@@ -136,7 +136,7 @@
 		</right>
 	</object>
 	<object>
-		<name>Document.бджВводПланаБюджетаДоходовИРасходов.TabularSection.План.Attribute.Сумма</name>
+		<name>Document.бджВводПланаБюджетаДоходовИРасходов.TabularSection.План.Attribute.Значение</name>
 		<right>
 			<name>View</name>
 			<value>true</value>
@@ -557,7 +557,7 @@
 		</right>
 	</object>
 	<object>
-		<name>AccumulationRegister.бджПланБюджетаДоходовИРасходов.Resource.Сумма</name>
+		<name>AccumulationRegister.бджПланБюджетаДоходовИРасходов.Resource.Значение</name>
 		<right>
 			<name>View</name>
 			<value>true</value>

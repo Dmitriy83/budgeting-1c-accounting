@@ -505,7 +505,7 @@
         <common>true</common>
       </userVisible>
       <dataPath xsi:type="form:DataPath">
-        <segments>Объект.План.Сумма</segments>
+        <segments>Объект.План.Значение</segments>
       </dataPath>
       <extendedTooltip>
         <name>ПланСуммаРасширеннаяПодсказка</name>
