@@ -2400,7 +2400,12 @@
 	</totalField>
 	<totalField>
 		<dataPath>ОтклонениеОтБюджета</dataPath>
-		<expression>Сумма(ЕстьNull(Сумма, 0)) - Сумма(ЕстьNull(СуммаБюджет, 0))</expression>
+		<expression>(Сумма(ЕстьNull(Сумма, 0)) - Сумма(ЕстьNull(СуммаБюджет, 0))) * 
+Выбор Когда ВидОперации = "Списание" Тогда -1 Иначе 1 Конец</expression>
+		<group>ВидДвижения</group>
+		<group>ВидДенежныхСредств</group>
+		<group>ВидОперации</group>
+		<group>Период</group>
 	</totalField>
 	<parameter>
 		<name>ВидыСубконтоКД</name>
@@ -3405,7 +3410,12 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+							<dcsset:use>false</dcsset:use>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Сумма</dcsset:field>
+						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
 						<dcsset:item>
@@ -4079,7 +4089,12 @@
 						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
 					</dcsset:order>
 					<dcsset:selection>
-						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto">
+							<dcsset:use>false</dcsset:use>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Сумма</dcsset:field>
+						</dcsset:item>
 					</dcsset:selection>
 					<dcsset:conditionalAppearance>
 						<dcsset:item>
