@@ -2400,8 +2400,8 @@
 	</totalField>
 	<totalField>
 		<dataPath>ОтклонениеОтБюджета</dataPath>
-		<expression>(Сумма(ЕстьNull(Сумма, 0)) - Сумма(ЕстьNull(СуммаБюджет, 0))) * 
-Выбор Когда ВидОперации = "Списание" Тогда -1 Иначе 1 Конец</expression>
+		<expression>Выбор Когда Порядок = 4 Тогда 0 Иначе (Сумма(ЕстьNull(Сумма, 0)) - Сумма(ЕстьNull(СуммаБюджет, 0))) * 
+Выбор Когда ВидОперации = "Списание" Тогда -1 Иначе 1 Конец Конец</expression>
 		<group>ВидДвижения</group>
 		<group>ВидДенежныхСредств</group>
 		<group>ВидОперации</group>
@@ -2575,6 +2575,8 @@
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
+				<dcsat:tableCell/>
+				<dcsat:tableCell/>
 			</dcsat:item>
 		</template>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
@@ -2701,15 +2703,89 @@
 					<dcsat:appearance>
 						<dcscor:item>
 							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
-							<dcscor:value xsi:type="v8ui:HorizontalAlign">Right</dcscor:value>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">20.25</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">11.125</dcscor:value>
 						</dcscor:item>
 						<dcscor:item>
 							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
-							<dcscor:value xsi:type="xs:decimal">20.25</dcscor:value>
+							<dcscor:value xsi:type="xs:decimal">11.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ОбъединятьПоГоризонтали</dcscor:parameter>
+							<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+			</dcsat:item>
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Факт</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">11.125</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">11.125</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Бюджет</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="v8:LocalStringType">
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Отклонение</v8:content>
+							</v8:item>
+						</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>ГоризонтальноеПоложение</dcscor:parameter>
+							<dcscor:value xsi:type="v8ui:HorizontalAlign">Center</dcscor:value>
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
@@ -2743,6 +2819,8 @@
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
+				<dcsat:tableCell/>
+				<dcsat:tableCell/>
 			</dcsat:item>
 		</template>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
@@ -2782,6 +2860,8 @@
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
+				<dcsat:tableCell/>
+				<dcsat:tableCell/>
 			</dcsat:item>
 		</template>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
@@ -2812,6 +2892,8 @@
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
+				<dcsat:tableCell/>
+				<dcsat:tableCell/>
 			</dcsat:item>
 		</template>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
@@ -2842,6 +2924,8 @@
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
+				<dcsat:tableCell/>
+				<dcsat:tableCell/>
 			</dcsat:item>
 		</template>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
@@ -2876,6 +2960,8 @@
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
+				<dcsat:tableCell/>
+				<dcsat:tableCell/>
 			</dcsat:item>
 		</template>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
@@ -2906,6 +2992,8 @@
 						</dcscor:item>
 					</dcsat:appearance>
 				</dcsat:tableCell>
+				<dcsat:tableCell/>
+				<dcsat:tableCell/>
 			</dcsat:item>
 		</template>
 		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">

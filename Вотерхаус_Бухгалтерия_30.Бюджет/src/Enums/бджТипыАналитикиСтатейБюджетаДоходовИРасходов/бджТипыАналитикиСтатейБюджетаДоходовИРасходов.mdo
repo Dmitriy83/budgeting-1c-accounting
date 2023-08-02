@@ -26,6 +26,13 @@
       <value>Статья затрат</value>
     </synonym>
   </enumValues>
+  <enumValues uuid="04504389-c145-474b-8164-4fcb5aaad48f">
+    <name>ПрочиеДоходыИРасходы</name>
+    <synonym>
+      <key>ru</key>
+      <value>Прочие доходы и расходы</value>
+    </synonym>
+  </enumValues>
   <enumValues uuid="bd85a07b-1f33-4d3e-8766-37c886bebbb1">
     <name>БезАналитики</name>
     <synonym>

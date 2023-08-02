@@ -30,6 +30,7 @@
   <defaultRunMode>ManagedApplication</defaultRunMode>
   <usePurposes>PersonalComputer</usePurposes>
   <scriptVariant>Russian</scriptVariant>
+  <version>1.0.0.1</version>
   <defaultLanguage>Language.Русский</defaultLanguage>
   <interfaceCompatibilityMode>TaxiEnableVersion8_2</interfaceCompatibilityMode>
   <compatibilityMode>8.3.17</compatibilityMode>
@@ -72,6 +73,7 @@
   <catalogs>Catalog.НоменклатурныеГруппы</catalogs>
   <catalogs>Catalog.Организации</catalogs>
   <catalogs>Catalog.Пользователи</catalogs>
+  <catalogs>Catalog.ПрочиеДоходыИРасходы</catalogs>
   <catalogs>Catalog.СтатьиДвиженияДенежныхСредств</catalogs>
   <catalogs>Catalog.СтатьиЗатрат</catalogs>
   <documents>Document.бджВводПланаБюджетаДоходовИРасходов</documents>
