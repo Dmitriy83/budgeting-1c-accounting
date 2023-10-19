@@ -11,6 +11,7 @@
   </synonym>
   <useStandardCommands>true</useStandardCommands>
   <mainDataCompositionSchema>Report.бджАнализБюджетаДоходовИРасходов.Template.MainDataCompositionSchema</mainDataCompositionSchema>
+  <variantsStorage>SettingsStorage.ХранилищеВариантовОтчетов</variantsStorage>
   <templates uuid="f951250e-8880-4436-ad2b-485c6fbf938c">
     <name>MainDataCompositionSchema</name>
     <synonym>

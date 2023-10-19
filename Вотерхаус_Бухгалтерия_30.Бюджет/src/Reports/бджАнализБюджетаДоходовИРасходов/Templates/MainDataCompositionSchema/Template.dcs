@@ -71,6 +71,16 @@
 				</v8:item>
 			</title>
 		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>НеРассчитыватьИтоги</dataPath>
+			<field>НеРассчитыватьИтоги</field>
+			<title xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Не рассчитывать итоги</v8:content>
+				</v8:item>
+			</title>
+		</field>
 		<item xsi:type="DataSetObject">
 			<name>Факт</name>
 			<field xsi:type="DataSetFieldField">
@@ -148,6 +158,19 @@
 					<v8:Type xmlns:d6p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d6p1:CatalogRef.Организации</v8:Type>
 				</valueType>
 			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НеРассчитыватьИтоги</dataPath>
+				<field>НеРассчитыватьИтоги</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Не рассчитывать итоги</v8:content>
+					</v8:item>
+				</title>
+				<valueType>
+					<v8:Type>xs:boolean</v8:Type>
+				</valueType>
+			</field>
 			<dataSource>ИсточникДанных1</dataSource>
 			<objectName>Факт</objectName>
 		</item>
@@ -192,16 +215,27 @@
 				<dataPath>ЗначениеПлан</dataPath>
 				<field>ЗначениеПлан</field>
 			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НеРассчитыватьИтоги</dataPath>
+				<field>НеРассчитыватьИтоги</field>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Не рассчитывать итоги</v8:content>
+					</v8:item>
+				</title>
+			</field>
 			<dataSource>ИсточникДанных1</dataSource>
 			<query>ВЫБРАТЬ
-	бджПланБюджетаДоходовИРасходовОбороты.СтатьяБюджетаДоходовИРасходов,
-	бджПланБюджетаДоходовИРасходовОбороты.Аналитика,
+	бджПланБюджетаДоходовИРасходовОбороты.СтатьяБюджетаДоходовИРасходов КАК СтатьяБюджетаДоходовИРасходов,
+	бджПланБюджетаДоходовИРасходовОбороты.Аналитика КАК Аналитика,
 	СУММА(бджПланБюджетаДоходовИРасходовОбороты.ЗначениеОборот) КАК ЗначениеПлан,
 	бджПланБюджетаДоходовИРасходовОбороты.Период КАК Месяц,
-	бджПланБюджетаДоходовИРасходовОбороты.Организация
+	бджПланБюджетаДоходовИРасходовОбороты.Организация КАК Организация,
+	бджПланБюджетаДоходовИРасходовОбороты.СтатьяБюджетаДоходовИРасходов.НеРассчитыватьИтоги КАК НеРассчитыватьИтоги
 ИЗ
-	РегистрНакопления.бджПланБюджетаДоходовИРасходов.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Месяц,) КАК
-		бджПланБюджетаДоходовИРасходовОбороты
+	РегистрНакопления.бджПланБюджетаДоходовИРасходов.Обороты(&amp;НачалоПериода, &amp;КонецПериода, Месяц, ) КАК бджПланБюджетаДоходовИРасходовОбороты
+
 СГРУППИРОВАТЬ ПО
 	бджПланБюджетаДоходовИРасходовОбороты.СтатьяБюджетаДоходовИРасходов,
 	бджПланБюджетаДоходовИРасходовОбороты.Аналитика,
@@ -219,17 +253,51 @@
 			</v8:item>
 		</title>
 	</calculatedField>
+	<calculatedField>
+		<dataPath>ЭтоНоменклатурнаяГруппа</dataPath>
+		<expression>ТипЗначения(Аналитика) = Тип("Справочник.НоменклатурныеГруппы")</expression>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Это номенклатурная группа</v8:content>
+			</v8:item>
+		</title>
+		<valueType>
+			<v8:Type>xs:boolean</v8:Type>
+		</valueType>
+	</calculatedField>
 	<totalField>
 		<dataPath>РазницаПланФакт</dataPath>
-		<expression>Сумма(РазницаПланФакт)</expression>
+		<expression>Выразить(Сумма(РазницаПланФакт), "Число(15,0)")</expression>
+		<group>Аналитика</group>
 	</totalField>
 	<totalField>
 		<dataPath>ЗначениеПлан</dataPath>
-		<expression>Сумма(ЗначениеПлан)</expression>
+		<expression>Выразить(Сумма(ЗначениеПлан), "Число(15,0)")</expression>
+		<group>Аналитика</group>
 	</totalField>
 	<totalField>
 		<dataPath>ЗначениеФакт</dataPath>
-		<expression>Сумма(ЗначениеФакт)</expression>
+		<expression>Выбор Когда НеРассчитыватьИтоги Тогда 0 Иначе Выразить(Сумма(ЗначениеФакт), "Число(15,0)") Конец</expression>
+		<group>СтатьяБюджетаДоходовИРасходов</group>
+		<group>СтатьяБюджетаДоходовИРасходов Иерархия</group>
+	</totalField>
+	<totalField>
+		<dataPath>ЗначениеФакт</dataPath>
+		<expression>Выразить(Сумма(ЗначениеФакт), "Число(15,0)") </expression>
+		<group>Аналитика</group>
+	</totalField>
+	<totalField>
+		<dataPath>ЗначениеПлан</dataPath>
+		<expression>Выбор Когда НеРассчитыватьИтоги Тогда 0 Иначе Выразить(Сумма(ЗначениеПлан), "Число(15,0)") Конец</expression>
+		<group>СтатьяБюджетаДоходовИРасходов</group>
+		<group>СтатьяБюджетаДоходовИРасходов Иерархия</group>
+	</totalField>
+	<totalField>
+		<dataPath>РазницаПланФакт</dataPath>
+		<expression>Выбор Когда НеРассчитыватьИтоги Тогда 0 Иначе Выразить(Сумма(РазницаПланФакт), "Число(15,0)") Конец</expression>
+		<group>СтатьяБюджетаДоходовИРасходов</group>
+		<group>СтатьяБюджетаДоходовИРасходов Иерархия</group>
 	</totalField>
 	<parameter>
 		<name>ПериодФормирования</name>
@@ -261,6 +329,7 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<expression>НачалоПериода(&amp;ПериодФормирования.ДатаНачала, "Месяц")</expression>
 	</parameter>
@@ -278,9 +347,62 @@
 				<v8:DateFractions>DateTime</v8:DateFractions>
 			</v8:DateQualifiers>
 		</valueType>
+		<value xsi:nil="true"/>
 		<useRestriction>true</useRestriction>
 		<expression>КонецПериода(&amp;ПериодФормирования.ДатаОкончания, "Месяц")</expression>
 	</parameter>
+	<template>
+		<name>Макет2</name>
+		<template xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:AreaTemplate">
+			<dcsat:item xsi:type="dcsat:TableRow">
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ЗначениеПлан</dcsat:value>
+					</dcsat:item>
+					<dcsat:appearance>
+						<dcscor:item>
+							<dcscor:parameter>МинимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">10.75</dcscor:value>
+						</dcscor:item>
+						<dcscor:item>
+							<dcscor:parameter>МаксимальнаяШирина</dcscor:parameter>
+							<dcscor:value xsi:type="xs:decimal">10.75</dcscor:value>
+						</dcscor:item>
+					</dcsat:appearance>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">ЗначениеФакт</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+				<dcsat:tableCell>
+					<dcsat:item xsi:type="dcsat:Field">
+						<dcsat:value xsi:type="dcscor:Parameter">РазницаПланФакт</dcsat:value>
+					</dcsat:item>
+				</dcsat:tableCell>
+			</dcsat:item>
+		</template>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ЗначениеПлан</dcsat:name>
+			<dcsat:expression>Выбор Когда СтатьяБюджетаДоходовИРасходов.НеРассчитыватьИтоги Тогда "" Иначе ЗначениеПлан Конец</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>ЗначениеФакт</dcsat:name>
+			<dcsat:expression>Выбор Когда СтатьяБюджетаДоходовИРасходов.НеРассчитыватьИтоги Тогда "" Иначе ЗначениеФакт Конец</dcsat:expression>
+		</parameter>
+		<parameter xmlns:dcsat="http://v8.1c.ru/8.1/data-composition-system/area-template" xsi:type="dcsat:ExpressionAreaTemplateParameter">
+			<dcsat:name>РазницаПланФакт</dcsat:name>
+			<dcsat:expression>Выбор Когда СтатьяБюджетаДоходовИРасходов.НеРассчитыватьИтоги Тогда "" Иначе РазницаПланФакт Конец</dcsat:expression>
+		</parameter>
+	</template>
+	<template>
+		<name>Макет1</name>
+		<template xsi:nil="true"/>
+	</template>
+	<template>
+		<name>Макет1</name>
+		<template xsi:nil="true"/>
+	</template>
 	<settingsVariant>
 		<dcsset:name>АнализБюджетаДоходовИРасходов</dcsset:name>
 		<dcsset:presentation xsi:type="v8:LocalStringType">
@@ -313,11 +435,6 @@
 					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
 					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
 				</dcscor:item>
-				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
-					<dcscor:use>false</dcscor:use>
-					<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
-					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">Auto</dcscor:value>
-				</dcscor:item>
 			</dcsset:outputParameters>
 			<dcsset:item xsi:type="dcsset:StructureItemTable">
 				<dcsset:column>
@@ -326,6 +443,8 @@
 							<dcsset:field>Месяц</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 						</dcsset:item>
 					</dcsset:groupItems>
 					<dcsset:order>
@@ -341,6 +460,8 @@
 							<dcsset:field>Организация</dcsset:field>
 							<dcsset:groupType>Items</dcsset:groupType>
 							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 						</dcsset:item>
 					</dcsset:groupItems>
 					<dcsset:order>
@@ -363,6 +484,8 @@
 								<dcsset:field>СтатьяБюджетаДоходовИРасходов</dcsset:field>
 								<dcsset:groupType>Hierarchy</dcsset:groupType>
 								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 							</dcsset:item>
 						</dcsset:groupItems>
 						<dcsset:order>
@@ -380,6 +503,217 @@
 									<dcsset:field>Аналитика</dcsset:field>
 									<dcsset:groupType>Hierarchy</dcsset:groupType>
 									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Аналитика</dcsset:left>
+									<dcsset:comparisonType>Filled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+							<dcsset:outputParameters>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+									<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+								</dcscor:item>
+							</dcsset:outputParameters>
+						</dcsset:item>
+					</dcsset:item>
+				</dcsset:row>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>АнализБюджетаДоходовИРасходовСОтборомПоНоменклатурнойГруппе</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Анализ БДР с отбором по ном. группе</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗначениеПлан</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ЗначениеФакт</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>РазницаПланФакт</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:dataParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ПериодФормирования</dcscor:parameter>
+					<dcscor:value xsi:nil="true"/>
+					<dcsset:userSettingID>2fd45d04-111e-45b1-adc9-ab38e4b4305d</dcsset:userSettingID>
+				</dcscor:item>
+			</dcsset:dataParameters>
+			<dcsset:outputParameters>
+				<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+					<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+			</dcsset:outputParameters>
+			<dcsset:item xsi:type="dcsset:StructureItemTable">
+				<dcsset:column>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Месяц</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+					</dcsset:selection>
+				</dcsset:column>
+				<dcsset:row>
+					<dcsset:groupItems>
+						<dcsset:item xsi:type="dcsset:GroupItemField">
+							<dcsset:field>Организация</dcsset:field>
+							<dcsset:groupType>Items</dcsset:groupType>
+							<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+							<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+							<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+						</dcsset:item>
+					</dcsset:groupItems>
+					<dcsset:order>
+						<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+					</dcsset:order>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Организация</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:outputParameters>
+						<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+							<dcscor:parameter>РасположениеИтогов</dcscor:parameter>
+							<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+						</dcscor:item>
+					</dcsset:outputParameters>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>СтатьяБюджетаДоходовИРасходов</dcsset:field>
+								<dcsset:groupType>Hierarchy</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ЭтоНоменклатурнаяГруппа</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:boolean">true</dcsset:right>
+							</dcsset:item>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:use>false</dcsset:use>
+								<dcsset:left xsi:type="dcscor:Field">Аналитика</dcsset:left>
+								<dcsset:comparisonType>InList</dcsset:comparisonType>
+								<dcsset:userSettingID>81419444-be32-4fc3-932a-3e4926dea49a</dcsset:userSettingID>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>СтатьяБюджетаДоходовИРасходов.Порядок</dcsset:field>
+								<dcsset:orderType>Asc</dcsset:orderType>
+							</dcsset:item>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:outputParameters>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+								<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+							</dcscor:item>
+						</dcsset:outputParameters>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>Аналитика</dcsset:field>
+									<dcsset:groupType>Hierarchy</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+								</dcsset:item>
+							</dcsset:groupItems>
+							<dcsset:filter>
+								<dcsset:item xsi:type="dcsset:FilterItemComparison">
+									<dcsset:left xsi:type="dcscor:Field">Аналитика</dcsset:left>
+									<dcsset:comparisonType>Filled</dcsset:comparisonType>
+								</dcsset:item>
+							</dcsset:filter>
+							<dcsset:order>
+								<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+							</dcsset:order>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+							</dcsset:selection>
+							<dcsset:outputParameters>
+								<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+									<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+									<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+								</dcscor:item>
+							</dcsset:outputParameters>
+						</dcsset:item>
+					</dcsset:item>
+					<dcsset:item>
+						<dcsset:groupItems>
+							<dcsset:item xsi:type="dcsset:GroupItemField">
+								<dcsset:field>СтатьяБюджетаДоходовИРасходов</dcsset:field>
+								<dcsset:groupType>Hierarchy</dcsset:groupType>
+								<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+								<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+								<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
+							</dcsset:item>
+						</dcsset:groupItems>
+						<dcsset:filter>
+							<dcsset:item xsi:type="dcsset:FilterItemComparison">
+								<dcsset:left xsi:type="dcscor:Field">ЭтоНоменклатурнаяГруппа</dcsset:left>
+								<dcsset:comparisonType>Equal</dcsset:comparisonType>
+								<dcsset:right xsi:type="xs:boolean">false</dcsset:right>
+							</dcsset:item>
+						</dcsset:filter>
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemField">
+								<dcsset:field>СтатьяБюджетаДоходовИРасходов.Порядок</dcsset:field>
+								<dcsset:orderType>Asc</dcsset:orderType>
+							</dcsset:item>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+						<dcsset:outputParameters>
+							<dcscor:item xsi:type="dcsset:SettingsParameterValue">
+								<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+								<dcscor:value xsi:type="dcsset:DataCompositionTextOutputType">DontOutput</dcscor:value>
+							</dcscor:item>
+						</dcsset:outputParameters>
+						<dcsset:item>
+							<dcsset:groupItems>
+								<dcsset:item xsi:type="dcsset:GroupItemField">
+									<dcsset:field>Аналитика</dcsset:field>
+									<dcsset:groupType>Hierarchy</dcsset:groupType>
+									<dcsset:periodAdditionType>None</dcsset:periodAdditionType>
+									<dcsset:periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionBegin>
+									<dcsset:periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</dcsset:periodAdditionEnd>
 								</dcsset:item>
 							</dcsset:groupItems>
 							<dcsset:filter>
