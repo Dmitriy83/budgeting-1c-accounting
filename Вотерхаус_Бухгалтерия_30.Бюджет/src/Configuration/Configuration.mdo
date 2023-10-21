@@ -13,7 +13,6 @@
     <mainSectionCommandInterface>Extended</mainSectionCommandInterface>
     <defaultLanguage>Checked</defaultLanguage>
     <interfaceCompatibilityMode>Checked</interfaceCompatibilityMode>
-    <compatibilityMode>Checked</compatibilityMode>
     <defaultStyle>Extended</defaultStyle>
   </extension>
   <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="1cfb7c57-5d2b-4940-93f1-9f7ceb72bb04"/>
@@ -33,7 +32,6 @@
   <version>1.0.0.1</version>
   <defaultLanguage>Language.Русский</defaultLanguage>
   <interfaceCompatibilityMode>TaxiEnableVersion8_2</interfaceCompatibilityMode>
-  <compatibilityMode>8.3.17</compatibilityMode>
   <languages uuid="8ad2dd5d-aa5b-4908-886e-5a8083a0f53c">
     <name>Русский</name>
     <objectBelonging>Adopted</objectBelonging>
