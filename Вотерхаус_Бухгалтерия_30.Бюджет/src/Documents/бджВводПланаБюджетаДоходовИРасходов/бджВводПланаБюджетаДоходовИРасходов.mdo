@@ -65,6 +65,11 @@
     <maxValue xsi:type="core:UndefinedValue"/>
   </standardAttributes>
   <createOnInput>Use</createOnInput>
+  <help>
+    <pages>
+      <lang>ru</lang>
+    </pages>
+  </help>
   <fullTextSearch>Use</fullTextSearch>
   <objectPresentation>
     <key>ru</key>
