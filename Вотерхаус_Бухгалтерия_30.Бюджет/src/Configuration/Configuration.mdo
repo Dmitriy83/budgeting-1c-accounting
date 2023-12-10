@@ -29,7 +29,7 @@
   <defaultRunMode>ManagedApplication</defaultRunMode>
   <usePurposes>PersonalComputer</usePurposes>
   <scriptVariant>Russian</scriptVariant>
-  <version>1.0.0.1</version>
+  <version>1.0.0.2</version>
   <defaultLanguage>Language.Русский</defaultLanguage>
   <interfaceCompatibilityMode>TaxiEnableVersion8_2</interfaceCompatibilityMode>
   <languages uuid="8ad2dd5d-aa5b-4908-886e-5a8083a0f53c">
@@ -77,6 +77,7 @@
   <documents>Document.бджВводПланаБюджетаДоходовИРасходов</documents>
   <documents>Document.бджВводПланаДвиженийДенежныхСредств</documents>
   <enums>Enum.бджТипыАналитикиСтатейБюджетаДоходовИРасходов</enums>
+  <enums>Enum.ВидыДвиженийДенежныхСредств</enums>
   <reports>Report.бджАнализБюджетаДоходовИРасходов</reports>
   <reports>Report.бджАнализДвиженийДенежныхСредств</reports>
   <accumulationRegisters>AccumulationRegister.бджПланБюджетаДоходовИРасходов</accumulationRegisters>
